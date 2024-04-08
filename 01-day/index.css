@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+}
+.conter{
+    display: flex;
+    width: 90vw;
+}
+.photo{
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    height: 80vh;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    flex: 0.5;
+    transition: all 700ms ease-in;
+}
+.photo h3{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+.photo.active{
+    flex: 5; 
+}
+.photo.active h3{
+    opacity: 1;
+    transition: all 0.3s ease-in 0.4;
+}
