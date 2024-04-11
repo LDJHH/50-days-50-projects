@@ -5,6 +5,7 @@ const math=document.querySelectorAll('.math')
 
 let sum=1;
 
+/* 创建一个点击事件 */
 next.addEventListener('click',()=>{
     sum++
     if(sum>math.length){
@@ -13,6 +14,7 @@ next.addEventListener('click',()=>{
     date()
 })
 
+/* 创建一个点击事件 */
 perv.addEventListener('click',()=>{
     sum--
     if(sum<1){
@@ -21,6 +23,8 @@ perv.addEventListener('click',()=>{
     date()
 })
 
+/* 创建一个函数 */
+/* 主要作用是对math添加或删除类名active */
 function date(){
     math.forEach((math,idx)=>{
         if (idx<sum) {
@@ -30,8 +34,11 @@ function date(){
         }
     })
 
+    /* 这部分主要是为了实现类似进度条的效果 */
     const active=document.querySelectorAll('.active')    
-    jingdua.style.width=(active.length-1)/(math.length-1)*100+'%'
+    jingdus.style.width=(active.length-1)/(math.length-1)*100+'%'
+
+    /* 这里是为了实现按钮在第一个与最后一个时不可点击的效果 */
     if(sum===1){
         perv.disabled=true
     }else if (sum===math.length){

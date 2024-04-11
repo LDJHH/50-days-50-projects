@@ -1,5 +1,6 @@
 const photos=document.querySelectorAll('.photo')
 
+/* 为phtot添加或删除类名active */
 photos.forEach(photo => {
     photo.addEventListener('click',()=>{
         removeactiveclass()
