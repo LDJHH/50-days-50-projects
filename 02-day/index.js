@@ -1,3 +1,4 @@
+/* 使js获取到id或类名 */
 const jingdus=document.getElementById('jingdua')
 const perv=document.getElementById('perv')
 const next=document.getElementById('next')
