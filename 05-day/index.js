@@ -1,3 +1,4 @@
+/* 获取类名 */
 const wenzis=document.querySelector('.wenzi')
 const bgs=document.querySelector('.bg')
 
@@ -5,6 +6,7 @@ let load=0;
 
 let int = setInterval(blurring,30)
 
+/* 创建一个函数 */
 function blurring(){
     load++
     if(load>99){

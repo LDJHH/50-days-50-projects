@@ -7,6 +7,8 @@ photos.forEach(photo => {
         photo.classList.add("active")
     })
 })
+/* 创建一个函数 */
+/* 为未被点击的图片删除类名active */
 function removeactiveclass(){
     photos.forEach(photo=>{
         photo.classList.remove('active')
