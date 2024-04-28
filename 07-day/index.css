@@ -1,0 +1,114 @@
+:root{
+    --left-bg-color:rgba(87,84,236,0.3);
+    --right-bg-color:rgba(43,43,43,0.8);
+    --left-but-hover-color:rgba(87,84,236,1);
+    --right-but-hover-color:rgba(28,122,28,1);
+    --hover-width:75%;
+    --other-width:25%;
+    --speed:1000ms;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+.conter{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #333;
+}
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+}
+h1{
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+.but{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-decoration: none;
+    border: #fff solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 15rem;
+    padding: 1.5rem;
+}
+.left .but:hover{
+    background-color: var(--left-but-hover-color);
+    border-color: var(--left-but-hover-color);
+}
+.right .but:hover{
+    background-color: var(--right-but-hover-color);
+    border-color: var(--right-but-hover-color);
+}
+.left{
+    left: 0;
+    background: url(https://ts1.cn.mm.bing.net/th/id/R-C.b8e84a0907bf9b5128dfa48be0ae48af?rik=tfH6k%2fT3hkauqw&riu=http%3a%2f%2fwww.08lr.cn%2fuploads%2fallimg%2f220330%2f1-2300141M0.jpg&ehk=dR6hTo1o7lNsHkpE62oIzMtJ%2bmxktf7%2fx6tp3Zt2uB8%3d&risl=&pid=ImgRaw&r=0);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.left::before{
+    content: '';
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+}
+.right{
+    right: 0;
+    background: url(https://ts1.cn.mm.bing.net/th/id/R-C.009dbb0af094705ed3632bae90378730?rik=3z09sHbE%2bT%2fgRg&riu=http%3a%2f%2fpic.bizhi360.com%2fbbpic%2f35%2f8035.jpg&ehk=jRXHXPr3qu67DYFwiOxPAAWBpu1xjbkeoKj3x6ykQqw%3d&risl=&pid=ImgRaw&r=0);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
+}
+.left,
+.right,
+.left::before,
+.right::before{
+    transition: all var(--speed) ease-in-out;
+}
+.hover-left .left{ 
+    width: var(--hover-width);
+}
+.hover-left .right{
+    width: var(--other-width);
+}
+.hover-right .left{
+    width: var(--other-width);
+}
+.hover-right .right{
+    width: var(--hover-width);
+}
+@media(max-width:800px){
+    h1{
+        font-size: 1rem;
+        top: 30%;
+    }
+    .but{
+        padding: 2rem;
+    }
+}
